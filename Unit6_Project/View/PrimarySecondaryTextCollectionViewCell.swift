@@ -17,9 +17,7 @@ class SelectionIndicatingPrimarySecondaryTextCollectionViewCell:
     override func awakeFromNib() {
         let background = UIView(frame: bounds)
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor =
-           UIColor.systemGray4.withAlphaComponent(0.75)
-
+        background.backgroundColor = UIColor.systemGray4.withAlphaComponent(0.75)
         selectedBackgroundView = background
         
         layer.cornerRadius = 8

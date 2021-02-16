@@ -104,6 +104,10 @@ class HabitCollectionViewController: UICollectionViewController {
         dataSource.applySnapshotUsing(sectionIDs: sectionIDs, itemsBySection: itemsBySection)
     }
     
+    func configureCell(_ cell: PrimarySecondaryTextCollectionViewCell, withItem item: HabitCollectionViewController.ViewModel.Item) {
+        cell.primaryTextLabel.text = item.habit.name
+    }
+    
     func createDataSource() -> DataSourceType{
         
         let dataSource = DataSourceType(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
@@ -183,9 +187,5 @@ extension HabitCollectionViewController {
                                                     return UIMenu(title: "", image: nil, identifier: nil, options: [], children: [favoriteToggle])
         }
         return config
-    }
-    
-    func configureCell(_ cell: PrimarySecondaryTextCollectionViewCell, withItem item: HabitCollectionViewController.ViewModel.Item) {
-        cell.primaryTextLabel.text = item.habit.name
     }
 }
